@@ -6,9 +6,9 @@ import play.mvc.*;
 import java.util.*;
 
 
-public class Application extends Controller {
+public class Imoveis extends Controller {
 
-    public static void index() {
+    public static void form() {
         render();
     }
 
