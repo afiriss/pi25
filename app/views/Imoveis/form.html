@@ -1,4 +1,42 @@
 #{extends 'main.html' /}
 #{set title:'Formulário' /}
 
-#{welcome /}
+<h1>Formulário para as cadastro de imóveis!!</h1>
+
+<form action = "/imoveis/salvar">
+
+	<div class = "mb-3">
+	<label class = "form-label"> Qual é o bairro do seu imóvel? </label>
+	<input class = "form-control" type = "text" name = "i.bairro" />
+	</div>
+	
+	<div class = "mb-3">
+	<label class = "form-label"> Quantos cômodos tem? </label>
+	<input class = "form-control" type = "text" name = "i.quantidadeComodos" />
+	</div>
+	
+	<div class = "mb-3">
+	<label class = "form-label"> Quanto metros tem de área interna? </label>
+	<input class = "form-control" type = "text" name = "i.areaInterna" />
+	</div> 
+
+	<div class = "mb-3">
+	<label class = "form-label"> Quantos metros tem de área externa? </label>
+	<input class = "form-control" type = "text" name = "i.areaExterna"/> 
+	</div>
+	
+	<div class="mb-3">
+	    <label class="form-label">Tipo de Imóvel:</label> 
+	    <select class="form-select" name="i.tipoImovel.id">
+	        #{list items:tipos, as:'t'}
+	            <option value="${t.id}" ${t.id == i?.tipoImovel?.id ? 'selected' : ''}>
+	                ${t.descricao}
+	            </option>
+	        #{/list}
+	    </select>
+	</div>
+
+	
+	<input class = "btn btn-primary" type = "submit"/>
+	
+</form>	

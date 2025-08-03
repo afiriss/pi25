@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Detalhamento' /}
+
+<div class="container my-5">
+  <div class="card text-light" style="background-color: rgba(0, 0, 0, 0.7); border: none; border-radius: 15px;">
+    <div class="card-body">
+      <h3 class="card-title mb-4">Detalhes do Imóvel</h3>
+
+      <p><strong>Bairro:</strong> ${i.bairro}</p>
+      <p><strong>Cômodos:</strong> ${i.quantidadeComodos}</p>
+      <p><strong>Área Interna:</strong> ${i.areaInterna}</p>
+      <p><strong>Área Externa:</strong> ${i.areaExterna}</p>
+
+      <div class="mt-4 d-flex gap-3">
+        <a class="btn btn-success" href="@{Imoveis.form}">Cadastrar Novo</a>
+        <a class="btn btn-secondary" href="@{Imoveis.listar}">Listagem</a>
+      </div>
+    </div>
+  </div>
+</div>
