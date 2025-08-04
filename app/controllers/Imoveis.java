@@ -23,8 +23,8 @@ public class Imoveis extends Controller {
 		if (termo == null) {
 			imoveis = Imovel.find("status <> ?1", Status.INATIVO).fetch();
 		} else {
-			imoveis = Imovel.find("(lower(nome) like ?1 "
-					+ "or lower(email) like ?1) and status <> ?2",
+			imoveis = Imovel.find("(lower(bairro) like ?1 "
+					+ "or lower(quantidadeComodos) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%",
 					Status.INATIVO).fetch();
 		}

@@ -1,0 +1,39 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div class="search-label-container">
+  <label for="termo">Buscar por nome ou email:</label>
+</div>
+
+<div class="search-container">
+  <form action="@{Imoveis.listar}" class="search-form-inside">
+    <input 
+      id="termo"
+      type="text" 
+      name="termo" 
+      value="${termo}" 
+      placeholder="Digite nome ou email" 
+      class="search-input" />
+    <button type="submit" class="search-button">Enviar</button>
+  </form>
+</div>
+
+<div class="user-cards-container">
+  #{list items: imoveis, as:'i'}
+    <div class="user-card">
+      <p><strong>Bairro:</strong> ${i.bairro}</p>
+      <p><strong>Quantidade de cômodos:</strong> ${i.quantidadeComodos}</p>
+      <div class="button-group">
+        <a href="@{Imoveis.editar(i.id)}" class="action-button">Editar</a>
+        <a href="@{Imoveis.remover(i.id)}" class="action-button">Remover</a>
+      </div>
+    </div>
+  #{/list}
+  #{else}
+    <p class="no-users">Nenhuma Pessoa Cadastrada</p>
+  #{/else}
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="@{Imoveis.form}" class="action-button">Cadastrar Novo</a>
+</div>
