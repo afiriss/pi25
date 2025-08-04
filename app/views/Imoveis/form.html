@@ -12,24 +12,24 @@
 	
 	<div class = "mb-3">
 	<label class = "form-label"> Quantos cômodos tem? </label>
-	<input class = "form-control" type = "text" name = "i.quantidadeComodos" />
+	<input class = "form-control" type = "number" name = "i.quantidadeComodos" />
 	</div>
 	
 	<div class = "mb-3">
 	<label class = "form-label"> Quanto metros tem de área interna? </label>
-	<input class = "form-control" type = "text" name = "i.areaInterna" />
+	<input class = "form-control" type = "number" name = "i.areaInterna" />
 	</div> 
 
 	<div class = "mb-3">
 	<label class = "form-label"> Quantos metros tem de área externa? </label>
-	<input class = "form-control" type = "text" name = "i.areaExterna"/> 
+	<input class = "form-control" type = "number" name = "i.areaExterna"/> 
 	</div>
 	
 	<div class="mb-3">
 	    <label class="form-label">Tipo de Imóvel:</label> 
-	    <select class="form-select" name="i.tipoImovel.id">
+	    <select class="form-select" name="t.TipoImovel.id">
 	        #{list items:tipos, as:'t'}
-	            <option value="${t.id}" ${t.id == i?.tipoImovel?.id ? 'selected' : ''}>
+	            <option value="${t.id}" ${t.id == t?.TipoImovel?.id ? 'selected' : ''}>
 	                ${t.descricao}
 	            </option>
 	        #{/list}
