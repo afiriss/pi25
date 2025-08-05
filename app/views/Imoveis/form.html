@@ -28,8 +28,8 @@
 	<div class="mb-3">
 	    <label class="form-label">Tipo de Imóvel:</label> 
 	    <select class="form-select" name="t.TipoImovel.id">
-	        #{list items:tipos, as:'t'}
-	            <option value="${t.id}" ${t.id == t?.TipoImovel?.id ? 'selected' : ''}>
+	        #{list items:TipoImovel, as:'t'}
+	            <option value="${t.id}" ${t.id==t?.TipoImovel?.id?'selected' : ''}>
 	                ${t.descricao}
 	            </option>
 	        #{/list}

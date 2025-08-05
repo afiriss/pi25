@@ -2,8 +2,6 @@ package controllers;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-
 import models.TipoImovel;
 import models.Imovel;
 import models.Status;
@@ -13,8 +11,8 @@ import play.mvc.Controller;
 public class Imoveis extends Controller {
 
 	public static void form() {
-		List<Imovel> Imoveis = Imovel.findAll();
-		render(Imoveis);
+		List<Imovel> imoveis = Imovel.findAll();
+		render(imoveis);
 	}
 	
 
